@@ -1,4 +1,4 @@
-var app = angular.module('Pokedex', ['ui.router', 'ngStorage', 'PokemonCtrls']);
+var app = angular.module('PokedexApp', ['ui.router', 'PokemonCtrls']);
 
 app.config([
   '$stateProvider',
