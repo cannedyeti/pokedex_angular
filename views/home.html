@@ -7,8 +7,8 @@
       <button class="btn btn-info btn-xs fav" type="submit">Favorite</button>
     </form>
     <form method="GET" action="/info">
-     <input hidden type="text" name="name" value="<%= p.name %>">
-     <a class="btn btn-info btn-xs" href="/info/<%=p.name%>">More Info</a>
+     <input hidden type="text" name="name" value="{{p.name}}">
+     <a class="btn btn-info btn-xs" href="/info/{{p.name}}">More Info</a>
     </form>
   </div>
   <br>
