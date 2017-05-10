@@ -1,6 +1,6 @@
-var app = angular.module('PokedexApp', ['ui.router', 'PokemonCtrls']);
+angular.module('PokedexApp', ['ui.router', 'PokemonCtrls'])
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
   function($stateProvider, $urlRouterProvider, $locationProvider){
     $urlRouterProvider.otherwise('/404');
 
@@ -9,10 +9,15 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
       templateUrl: './views/home.html',
       controller: 'PokemonCrtl'
     })
-    $stateProvider.state('details', {
+    .state("details", {
       url: '/info/:name',
       templateUrl: './views/details.html',
       controller: 'PokemonDetailCtrl'
+    })
+    .state("favorites", {
+      url: '/favorites',
+      templateUrl: './views/favorites.html',
+      controller: 'FavoritesCtrl'
     })
 
     $locationProvider.html5Mode(true);

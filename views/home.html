@@ -1,3 +1,4 @@
+<h2 style="color: white">{{title}}</h2>
 <div class="container" >
   <br>
   <div class="pokemon" ng-repeat="p in allPokemon track by $index">
@@ -6,10 +7,7 @@
       <input hidden type="text" name="name" value="{{p.name}}">
       <button class="btn btn-info btn-xs fav" type="submit">Favorite</button>
     </form>
-    <form method="GET" action="/info">
-     <input hidden type="text" name="name" value="{{p.name}}">
-     <a class="btn btn-info btn-xs" href="/info/{{p.name}}">More Info</a>
-    </form>
+    <a class="btn btn-info btn-xs" ng-href="/info/{{p.name}}">More Info</a>
   </div>
   <br>
 </div>
