@@ -1,7 +1,8 @@
 <h2 style="color: white">{{title}}</h2>
 <div class="container" >
+    <input type="text" class="form-control" ng-model="searchWord" placeholder="Find a Pokemon by">
   <br>
-  <div class="pokemon" ng-repeat="p in allPokemon track by $index">
+  <div class="pokemon" ng-repeat="p in allPokemon | filter: searchWord track by $index">
     <div>
       <h3>{{p.name}}</h3>
       <button ng-show="isFavorite($index+1)" class="btn btn-info btn-xs fav" ng-click="addFavorite($index + 1, p.name)">Favorite</button>

@@ -1,7 +1,10 @@
 angular.module('PokemonCtrls', ['PokedexServices'])
 .controller('PokemonCrtl', ['$scope', '$http', 'Favorites', '$location', function($scope, $http, Favorites, $location){
   $scope.allPokemon;
+  $scope.searchWord;
+
   $scope.favorites = Favorites.get();
+
   $scope.hasFavorites = function() {
     if(Object.keys($scope.favorites).length) {
       return true;
