@@ -17,7 +17,7 @@ angular.module('PokedexApp', ['ui.router', 'PokemonCtrls'])
     .state("favorites", {
       url: '/favorites',
       templateUrl: './views/favorites.html',
-      controller: 'FavoritesCtrl'
+      controller: 'PokemonCrtl'
     })
 
     $locationProvider.html5Mode(true);
