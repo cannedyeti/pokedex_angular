@@ -16,12 +16,15 @@
 	display: inline-block;
 }
 
+
+
 body {
 	background: url("../img/hex.jpg");
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
 	font-family: 'VT323', monospace;
+	/*max-height: 100vh;*/
 }
 
 .pokedexContainer {
@@ -36,16 +39,16 @@ body {
 
 .container {
 	margin-left: 15px;
-	/*text-align: center;*/
 	height: 367px;
 	position: relative;
 	width: 360px;
 	padding-left: 2%;
 	color: white;
-	bottom: 510px;
-	left: 310px;
+	bottom: 250px;
+	left: 10px;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	z-index: 2;
 }
 
 .bodyContainer {

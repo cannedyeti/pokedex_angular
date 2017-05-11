@@ -4,7 +4,8 @@
   <div class="pokemon" ng-repeat="(key, val) in favorites track by $index">
     <div>
       <h3>{{val.name}}</h3>
-      <button class="btn btn-danger btn-sm" ng-click="deleteFavorite(key)">Delete</button>
+      <button class="btn btn-danger btn-xs" ng-click="deleteFavorite(key)">Delete</button>
+      <a class="btn btn-info btn-xs" ng-href="/info/{{val.name}}">More Info</a>
       <br>
     </div>
   </div>
