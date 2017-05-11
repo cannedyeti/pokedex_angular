@@ -12,10 +12,9 @@ angular.module('PokemonCtrls', ['PokedexServices'])
     console.log("Error", err)
   });
 
-  $scope.addFavorite = function(id, pokemon, pokemonSpecies){
-    Favorites.add(id, pokemon, pokemonSpecies);
+  $scope.addFavorite = function(id, name){
+    Favorites.add(id, name);
     $scope.favorites = Favorites.get();
-    $scope.keys = Object.keys($scope.favorites);
     $location.path('/favorites');
   };
 
@@ -43,10 +42,9 @@ angular.module('PokemonCtrls', ['PokedexServices'])
     console.log("Error", err)
   });
   
-  $scope.addFavorite = function(id, pokemon, pokemonSpecies){
-    Favorites.add(id, pokemon, pokemonSpecies);
+  $scope.addFavorite = function(id, name){
+    Favorites.add(id, name);
     $scope.favorites = Favorites.get();
-    $scope.keys = Object.keys($scope.favorites);
     $location.path('/favorites');
   };
 
