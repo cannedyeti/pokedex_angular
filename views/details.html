@@ -1,14 +1,13 @@
 <h2 style="color: white">{{title}}</h2>
 <div class="container">
   <br>
-  <div class="pokemon">
-    <h3>{{loading}}</h3>
-    <h3>{{details.name}}</h3>
+  <div ng-show="loading">
+    <h3>Loading....</h3>
+  </div>
+  <div ng-show="!loading" class="pokemon">
+    <h3>{{details.name}} {{details.id}}</h3>
     <br>
-    <form method="POST" action="/favorites">
-      <input hidden type="text" name="name" value="hello">
-      <button class="btn btn-info btn-xs fav" type="submit">Favorite</button>
-    </form>
+    <button ng-show="isFavorite(details.id)" class="btn btn-info btn-xs fav" ng-click="addFavorite(details.id, details.name)">Favorite</button>
     <div>
       <img class="sprites" ng-src="{{details.sprites.front_default}}">
       <img class="sprites" ng-src="{{details.sprites.back_default}}">

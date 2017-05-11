@@ -21,6 +21,7 @@ angular.module('PokedexServices', [])
     delete: function(id){
       if($window.localStorage["favoritePokemon"]){
           var temp = JSON.parse($window.localStorage["favoritePokemon"]);
+          console.log("temp", temp)
           delete temp[id];
           $window.localStorage["favoritePokemon"] = JSON.stringify(temp);
       }

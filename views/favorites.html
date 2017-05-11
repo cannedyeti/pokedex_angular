@@ -1,9 +1,10 @@
 <div class="container" >
   <br>
+  <h3 ng-hide="hasFavorites()">No favorites yet, why not add some?</h3>
   <div class="pokemon" ng-repeat="(key, val) in favorites track by $index">
     <div>
       <h3>{{val.name}}</h3>
-      <button class="btn btn-danger btn-sm" ng-click="deleteFavorite({{key}})">Delete</button>
+      <button class="btn btn-danger btn-sm" ng-click="deleteFavorite(key)">Delete</button>
       <br>
     </div>
   </div>
