@@ -2,7 +2,6 @@ angular.module('PokemonCtrls', ['PokedexServices'])
 .controller('PokemonCrtl', ['$scope', '$http', 'Favorites', '$location', function($scope, $http, Favorites, $location){
   $scope.allPokemon;
   $scope.favorites = Favorites.get();
-  console.log("favorites: ", $scope.favorites)
   $http({
     method: 'GET',
     url: 'http://pokeapi.co/api/v2/pokemon?limit=151'
@@ -27,9 +26,10 @@ angular.module('PokemonCtrls', ['PokedexServices'])
   }
 }])
 
-.controller('PokemonDetailCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+.controller('PokemonDetailCtrl', ['$scope', '$http', '$stateParams', 'Favorites', '$location', function($scope, $http, $stateParams, Favorites, $location){
   $scope.loading = "Loading..";
   $scope.details;
+  $scope.favorites = Favorites.get();
   $http({
     method: 'GET',
     url: 'http://pokeapi.co/api/v2/pokemon/' + $stateParams.name
@@ -37,7 +37,6 @@ angular.module('PokemonCtrls', ['PokedexServices'])
     // console.log(res.data)
     $scope.loading = "";
     $scope.details = res.data;
-    console.log($scope.details)
   }, function error(err) {
     console.log("Error", err)
   });
@@ -48,6 +47,13 @@ angular.module('PokemonCtrls', ['PokedexServices'])
     $location.path('/favorites');
   };
 
+  $scope.isFavorite = function(id) {
+    if ($scope.favorites[id]) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }])
 
 
